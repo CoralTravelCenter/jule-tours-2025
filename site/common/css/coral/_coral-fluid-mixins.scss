@@ -1,0 +1,35 @@
+@use 'sass:math';
+@import "coral-variables";
+
+/*
+Миксин для расчета размера шрифта
+$px - задаем размер шрифта в px
+*/
+@mixin font($px) {
+	$em-value: math.div($px, $font_Size_Body);
+	font-size: #{$em-value}em; 
+}
+
+/*
+Миксин для подстановки любого правила и расчета его значения
+$property - задаем любое свойство, для которого нужны размеры в em
+$px - задаем значение для предыдущего свойства в px
+*/
+@mixin property($property, $px) {
+	$em-value: math.div($px, $font_Size_Body);
+	#{$property}: #{$em-value}em;
+}
+
+/*
+Миксин для установки размера шрифта и вычисления значения свойства относительно него
+$font-size-px - задаем размер шрифта в px
+$property - задаем любое свойство, для которого нужны размеры в em
+$px - задаем значение для предыдущего свойства в px
+*/
+@mixin fontAndProperty($font-size-px, $property, $property-px) {
+	$font-size-em: math.div($font-size-px, $font_Size_Body) * 1em;
+	font-size: $font-size-em;
+
+	$base-pixel-size: math.div($font-size-em * $font_Size_Body, 1em);
+	#{$property}: math.div($property-px, $base-pixel-size) * 1em;
+}

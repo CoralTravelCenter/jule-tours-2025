@@ -1,0 +1,21 @@
+@import "sunmar/sunmar-fluid-mixins";
+
+.mb-sm {
+	@include property(margin-bottom, 16);
+}
+
+.mb-md {
+	@include property(margin-bottom, 20);
+}
+
+.mb-lg {
+	@include property(margin-bottom, 24);
+}
+
+.mb-xl {
+	@include property(margin-bottom, 32);
+}
+
+.mb-xxl {
+	@include property(margin-bottom, 40);
+}

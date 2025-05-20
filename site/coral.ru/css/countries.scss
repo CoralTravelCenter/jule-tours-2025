@@ -1,0 +1,157 @@
+@import '../../common/css/_regular-mixins.scss';
+
+.destination {
+	&__features {
+		@include flex-grid(16px, 2, center);
+		margin-top: 24px !important;
+
+		@media (min-width: 1024px) {
+			@include flex-grid(16px, 3, center);
+		}
+
+		@media (min-width: 1280px) {
+			@include flex-grid(16px, 6, center);
+			margin-top: 32px !important;
+		}
+	}
+
+	&__feature {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		text-align: center;
+
+		@media (min-width: 1280px) {
+			flex-direction: column;
+			justify-content: start;
+		}
+	}
+
+	&__icon {
+		width: 64px !important;
+		height: 64px !important;
+	}
+
+	&__cta {
+		border-radius: var(--radius-border_Radius_MD, 20px);
+		padding: 8px;
+		min-height: 620px;
+		display: flex;
+		align-items: end;
+		margin-top: 24px !important;
+
+		@media (min-width: 1280px) {
+			margin-top: 32px !important;
+			min-height: 320px;
+			align-items: center;
+		}
+	}
+
+	&__cta-text {
+		width: 100%;
+		border-radius: inherit;
+		background: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(15px);
+		color: #fff;
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		@media (min-width: 1280px) {
+			width: 40%;
+		}
+
+		p,
+		strong {
+			font-size: 16px;
+		}
+	}
+
+	&--turkey {
+		.destination__cta {
+			background-image: url(/site/coral.ru/assets/turkey/turkey-bg-768.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+
+			@media (min-width: 1280px) {
+				background-image: url(/site/coral.ru/assets/turkey/turkey-bg-1440.jpg);
+			}
+		}
+	}
+
+	&--uae {
+		.destination__cta {
+			background-image: url(/site/coral.ru/assets/uae/uae-bg-768.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@media (min-width: 1280px) {
+				background-image: url(/site/coral.ru/assets/uae/uae-bg-1440.jpg);
+			}
+		}
+	}
+
+	&--egypt {
+		.destination__cta {
+			background-image: url(/site/coral.ru/assets/egypt/egypt-bg-768.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@media (min-width: 1280px) {
+				background-image: url(/site/coral.ru/assets/egypt/egypt-bg-1440.jpg);
+			}
+		}
+	}
+
+	&--cuba {
+		.destination__cta {
+			background-image: url(/site/coral.ru/assets/cuba/cuba-bg-768.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@media (min-width: 1280px) {
+				background-image: url(/site/coral.ru/assets/cuba/cuba-bg-1440.jpg);
+			}
+		}
+	}
+
+	&--shri {
+		.destination__cta {
+			background-image: url(/site/coral.ru/assets/shri/shri-bg-768.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@media (min-width: 1280px) {
+				background-image: url(/site/coral.ru/assets/shri/shri-bg-1440.jpg);
+			}
+		}
+	}
+
+	&--maldives {
+		.destination__cta {
+			background-image: url(/site/coral.ru/assets/maldives/maldives-bg-768.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@media (min-width: 1280px) {
+				background-image: url(/site/coral.ru/assets/maldives/maldives-bg-1440.jpg);
+			}
+		}
+	}
+
+	&--russia {
+		.destination__cta {
+			background-image: url(/site/coral.ru/assets/russia/russia-bg-768.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@media (min-width: 1280px) {
+				background-image: url(/site/coral.ru/assets/russia/russia-bg-1440.jpg);
+			}
+		}
+	}
+}

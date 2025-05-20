@@ -1,0 +1,79 @@
+@use "sass:math";
+@use "sass:selector";
+@import "global-variables";
+
+/*
+Миксин для создания адаптивной сетки на флексах:
+$gap - отступ между элементами
+$items-per-row - колличество элементов в ряде
+$justif - горизонатльное выравнивание
+*/
+@mixin flex-grid($gap: 1em, $items-per-row: 4, $justify: center) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $gap;
+	justify-content: $justify;
+
+	> * {
+		width: calc((100% - ($items-per-row - 1) * $gap) / $items-per-row);
+	}
+}
+
+/*
+Миксин для расчета line-height в относительных единицах:
+$LH - line-height в px
+$FZ - шрифт в px
+*/
+@mixin setLineHeight($LH, $FZ) {
+	line-height: math.div($LH, $FZ);
+}
+
+@mixin abs100x100 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin ruble {
+	&::after {
+		content: "₽";
+		margin-left: 5px;
+	}
+}
+
+@mixin transit($what, $duration) {
+	transition: $what $duration ease;
+}
+
+@mixin rounded-corners-overflow-fix {
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin responsive-font-size($base-font) {
+	font-size: min(1.1vw, $base-font);
+
+	@media (max-width: $mobile-breakpoint) {
+		font-size: min(4.27vw, $base-font);
+	}
+}
+
+/*
+Миксин для установки тега к классу
+$child - задаем тег, для которого хотим повысить специфичность
+пример: &__link {} - хотим добавить 'a' вначале правила и получить a.text__link {}
+делаем так: &__link { @include(parentTag)(a) {} }
+получаем: a.text__link {}
+*/
+@mixin parentTag($child) {
+	@at-root #{selector.unify(&, $child)} {
+		@content;
+	}
+}

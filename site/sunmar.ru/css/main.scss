@@ -1,0 +1,94 @@
+@import "../../common/css/sunmar/sunmar-fluid-mixins";
+@import "../../common/css/global-variables";
+
+section.kv > article .contenu {
+	.kv-main-banner {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 137/52;
+		border-radius: 32px;
+		overflow: hidden;
+
+		@media (max-width: 768px) {
+			aspect-ratio: 343/520;
+		}
+
+		.content {
+			--content-font-color: #ffffff;
+
+			position: absolute;
+			max-width: $max-content-width;
+			margin-inline: auto;
+			top: 0;
+			left: 50%;
+			width: 100%;
+			height: 100%;
+			transform: translateX(-50%);
+			padding: 1em 4em;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: start;
+			z-index: 3;
+
+			@media (max-width: 768px) {
+				justify-content: start;
+				align-items: center;
+				padding: 1.5em;
+			}
+
+			> div {
+				margin-top: auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: start;
+				gap: 0.5em;
+				height: 100%;
+
+				@media (max-width: 768px) {
+					align-items: center;
+					justify-content: start;
+					margin-top: 0;
+				}
+			}
+
+			h1,
+			p {
+				color: var(--content-font-color);
+				@media (max-width: 768px) {
+					text-align: center;
+				}
+			}
+
+			h1 {
+				@include font(56px);
+				@media (max-width: 768px) {
+					margin-top: 0;
+					@include font(32px);
+				}
+			}
+
+			p {
+				font-weight: 400;
+			}
+
+			p.slogan {
+				font-size: 1em;
+			}
+
+			p.erid {
+				font-size: 10px;
+				margin: auto 0 0 auto;
+				@media (max-width: 768px) {
+					margin: auto 0 0 0;
+				}
+			}
+		}
+
+		picture {
+			position: relative;
+			z-index: 2;
+		}
+	}
+}

@@ -1,0 +1,165 @@
+@import "../global-variables";
+@import "sunmar-variables";
+@import "../regular-mixins";
+@import "sunmar-fluid-mixins";
+@import "../layout";
+
+section.hero > article {
+	font-family: inherit;
+	font-weight: 400;
+	max-width: $max-content-width;
+	margin: auto;
+	@include responsive-font-size($font_Size_Body);
+
+	> .contenu {
+		> * {
+			width: 100%;
+		}
+
+		> *:nth-child(n + 2) {
+			@include fontAndProperty($font_Size_Body, margin-top, 20px);
+		}
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: $container-align;
+		@include fontAndProperty($font_Size_Body, padding-block, 40px);
+		padding-inline: 80px;
+
+		@media (max-width: $mobile-breakpoint) {
+			@include fontAndProperty($font_Size_Body, padding-block, 24px);
+			padding-inline: 0;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		margin: 0;
+		color: $font_Color_Default;
+		font-weight: 600;
+		text-align: $text-align;
+	}
+
+	h1 {
+		@include font($font_Size_Heading_1);
+		@include setLineHeight(
+			$font_Line_Height_Heading_1,
+			$font_Size_Heading_1
+		);
+	}
+
+	h2 {
+			@include font($font_Size_Heading_2);
+			@include setLineHeight(
+				$font_Line_Height_Heading_2,
+				$font_Size_Heading_2
+		);
+	}
+
+	h3 {
+		@include font($font_Size_Heading_3);
+		@include setLineHeight(
+			$font_Line_Height_Heading_3,
+			$font_Size_Heading_3
+	);
+	}
+
+	h4 {
+				@include font($font_Size_Heading_4);
+			@include setLineHeight(
+				$font_Line_Height_Heading_4,
+				$font_Size_Heading_4
+		);
+	}
+
+	h5 {
+		@include font($font_Size_Heading_5);
+		@include setLineHeight(
+			$font_Line_Height_Heading_5,
+	$font_Size_Heading_5
+		);
+	}
+
+	p {
+		margin: 0;
+		color: $font_Color_Default;
+		@include font($font_Size_Body);
+		@include setLineHeight($font_Line_Height_Body, $font_Size_Body);
+		text-align: $text-align;
+	}
+
+	strong,
+	b {
+		font-weight: 600;
+	}
+
+	.actions {
+		> button,
+		> a {
+			font-family: inherit;
+			@include font($font_Size_Body);
+			@include setLineHeight($font_Line_Height_Body, $font_Size_Body);
+			outline: none;
+			text-decoration: none;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			font-weight: 600;
+
+			@include fontAndProperty($font_Size_Body, padding-block, 12px);
+			@include fontAndProperty($font_Size_Body, padding-inline, 32px);
+
+			background: $сolor_Btn_Bg_Default;
+			border-radius: $border_Radius_Button;
+			border: 0;
+			color: $color_Base_Light;
+			cursor: pointer;
+			@include transit(all, 500ms);
+			@media (hover: hover) {
+				&:hover {
+					background: $сolor_Btn_Bg_Hover;
+				}
+			}
+
+			&:active {
+				background: linear-gradient(225deg, #b92161 0%, #c11117 100%);
+			}
+		}
+
+		> button.navy,
+		> a.navy {
+			background: #0e2855;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			color: #fff;
+			@media (hover: hover) {
+				&:hover {
+					background: #12336c;
+				}
+			}
+
+			&:active {
+				background: #061a3e;
+			}
+		}
+
+		> button.light,
+		> a.light {
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			color: #000;
+			@media (hover: hover) {
+				&:hover {
+					background: #f5f5f8;
+				}
+			}
+
+			&:active {
+				background: #dfdfe8;
+			}
+		}
+	}
+}

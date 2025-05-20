@@ -1,0 +1,145 @@
+@import "global-variables";
+@import "regular-mixins";
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+section.hero > article {
+	.contenu:has(.kv-main-banner) {
+		padding-top: 1em;
+	}
+
+	ul {
+		padding: initial;
+
+		li:before,
+		li:after {
+			position: initial;
+			content: initial;
+			display: initial;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.vimeo-video-box {
+		pointer-events: none;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+		overflow: hidden;
+		border-radius: 1em;
+
+		.vimeo-player,
+		[data-vimeo-vid] {
+			@include abs100x100();
+			opacity: 0;
+			@include transit(opacity, 1s);
+
+			&.playback {
+				opacity: 1;
+			}
+
+			iframe {
+				@include abs100x100();
+			}
+		}
+	}
+
+	.actions {
+		display: flex;
+		justify-content: $container-align;
+	}
+}
+
+.layout-container-limit:has(section.hero.full-width) {
+	max-width: 100% !important;
+	padding-inline: 0 !important;
+}
+
+.ant-col > div:has(section.hero.full-width) {
+	@media (max-width: 768px) {
+		padding-inline: 0;
+	}
+}
+
+section.hero:not(.full-width) > article {
+	max-width: $max-content-width;
+}
+
+section.hero.full-width > article {
+	max-width: 100%;
+}
+
+section.hero.kv.full-width {
+	.contenu {
+		padding-inline: 0;
+	}
+
+	.kv-main-banner {
+		border-radius: 0;
+	}
+}
+
+body:has(section.hero.full-width) section.hero:not(.full-width) > article {
+	max-width: 100%;
+
+	.contenu {
+		padding-inline: 80px;
+		max-width: $max-content-width;
+		margin-inline: auto;
+
+		@media (max-width: $mobile-breakpoint) {
+			padding-inline: 16px;
+		}
+	}
+}
+
+section.hero.full-width > article {
+	.contenu {
+		padding-inline: 80px;
+		max-width: $max-content-width;
+		margin-inline: auto;
+
+		@media (max-width: $mobile-breakpoint) {
+			padding-inline: 16px;
+		}
+	}
+}
+
+.row-outer-container:has(section.full-width) .row-container > div {
+	@media (max-width: $mobile-breakpoint) {
+		padding-inline: 0;
+	}
+}
+
+.hidden-on-mobile {
+	@media (max-width: $mobile-breakpoint) {
+		display: none;
+	}
+}
+
+.hidden-on-desktop {
+	@media (min-width: ($mobile-breakpoint + 1)) {
+		display: none;
+	}
+}
+
+div:empty,
+script,
+link {
+	br {
+		display: none;
+	}
+}

@@ -1,0 +1,6 @@
+/.idea/
+/.parcel-cache/
+/dev/
+/prod/
+.DS_Store
+/node_modules/
