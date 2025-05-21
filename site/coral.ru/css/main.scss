@@ -2,93 +2,113 @@
 @import '../../common/css/global-variables';
 
 section.kv > article .contenu {
-	.kv-main-banner {
-		position: relative;
-		width: 100%;
-		aspect-ratio: 137/52;
-		border-radius: 2em;
-		overflow: hidden;
+  .kv-main-banner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 99/130;
+    border-radius: 2em;
+    overflow: hidden;
 
-		@media (max-width: $mobile-breakpoint) {
-			aspect-ratio: 343/520;
-		}
+    @media (min-width: 768px) {
+      aspect-ratio: 19/10;
+    }
 
-		.content {
-			--content-font-color: #ffffff;
+    @media (min-width: 1024px) {
+      aspect-ratio: 216/95;
+    }
 
-			position: absolute;
-			max-width: $max-content-width;
-			margin-inline: auto;
-			top: 0;
-			left: 50%;
-			width: 100%;
-			height: 100%;
-			transform: translateX(-50%);
-			padding: 1em 4em;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: start;
-			z-index: 3;
+    @media (min-width: 1024px) {
+      aspect-ratio: 216/95;
+    }
 
-			@media (max-width: 768px) {
-				justify-content: start;
-				align-items: center;
-				padding: 1.5em;
-			}
+    @media (min-width: 1280px) {
+      aspect-ratio: 92/35;
+    }
 
-			> div {
-				margin-top: auto;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: start;
-				gap: 0.5em;
-				height: 100%;
+    @media (min-width: 1440px) {
+      aspect-ratio: 171/65;
+    }
 
-				@media (max-width: 768px) {
-					justify-content: start;
-					align-items: center;
-					margin-top: 0;
-				}
-			}
+    .content {
+      --content-font-color: #ffffff;
 
-			h1,
-			p {
-				color: var(--content-font-color);
-				@media (max-width: 768px) {
-					text-align: center;
-				}
-			}
+      position: absolute;
+      max-width: $max-content-width;
+      margin-inline: auto;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-50%);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      z-index: 3;
 
-			h1 {
-				@include font(56px);
-				@media (max-width: 768px) {
-					margin-top: 0;
-					@include font(32px);
-				}
-			}
+      @media (min-width: 768px) {
+        padding: 32px;
+      }
 
-			p {
-				font-weight: 400;
-			}
+      @media (min-width: 1024px) {
+        padding: 64px;
+      }
 
-			p.slogan {
-				font-size: 1em;
-			}
+      > div {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0.5em;
+        height: 100%;
 
-			p.erid {
-				font-size: 10px;
-				margin: auto 0 0 auto;
-				@media (max-width: 768px) {
-					margin: auto 0 0 0;
-				}
-			}
-		}
+        @media (min-width: 768px) {
+          justify-content: center;
+        }
+      }
 
-		picture {
-			position: relative;
-			z-index: 2;
-		}
-	}
+      h1,
+      p {
+        color: var(--content-font-color);
+
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: 300;
+
+        @media (min-width: 768px) {
+          width: 59%;
+        }
+
+        @media (min-width: 1024px) {
+          font-size: 40px;
+        }
+
+        @media (min-width: 1440px) {
+          font-size: 50px;
+        }
+      }
+
+      p {
+        font-weight: 400;
+      }
+
+      p.slogan {
+        font-size: 1em;
+      }
+
+      p.erid {
+        font-size: 10px;
+        margin: auto 0 0 auto;
+
+      }
+    }
+
+    picture {
+      position: relative;
+      z-index: 2;
+    }
+  }
 }
