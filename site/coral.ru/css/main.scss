@@ -87,7 +87,7 @@ section.kv > article .contenu {
         }
 
         @media (min-width: 1440px) {
-          font-size: 50px;
+          font-size: 56px;
         }
       }
 
@@ -96,14 +96,13 @@ section.kv > article .contenu {
       }
 
       p.slogan {
-        font-size: 1em;
+        font-size: 16px;
+
+        @media (min-width: 1440px) {
+          font-size: 20px;
+        }
       }
 
-      p.erid {
-        font-size: 10px;
-        margin: auto 0 0 auto;
-
-      }
     }
 
     picture {
